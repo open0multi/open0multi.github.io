@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding.">
+  <meta name="description" content="OpenMulti: Open-Vocabulary Instance-Level Multi-Agent Distributed Implicit Mapping">
   <meta name="keywords" content="OpenObj,  Open-Vocabulary, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenObj</title>
+  <title>OpenMulti</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -22,20 +22,18 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
   <!-- <link rel="stylesheet" href="./static/css/foundation.css"/> -->
-  <link rel="stylesheet" href="./static/css/twentytwenty.css"/>
-  <link rel="stylesheet" href="./static/css/titleCenter.css"/>
+  <link rel="stylesheet" href="./static/css/twentytwenty.css" />
+  <link rel="stylesheet" href="./static/css/titleCenter.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -44,11 +42,11 @@
   <script src="./static/js/index.js"></script>
   <script src="./static/js/jquery.twentytwenty.js"></script>
   <script>
-    $(function(){
-      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
-      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    $(function () {
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.7 });
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({ default_offset_pct: 0.3, orientation: 'vertical' });
     });
-    </script>
+  </script>
   <style>
     .grid-container {
       display: grid;
@@ -56,55 +54,73 @@
       gap: 10px;
       padding: 0;
     }
-    
-    .grid-container > div {
+
+    .grid-container>div {
       text-align: center;
       padding: 0;
       font-size: 30px;
     }
-    
+
     .item1 {
       grid-column: 1 / 4;
     }
+
     .item2 {
       grid-column: 5 / 8;
     }
+
     .item3 {
       grid-column: 1 / 4;
     }
+
     .item4 {
       grid-column: 5 / 8;
     }
-    
+
     .content h4 {
-      font-size: 16px; !important;
+      font-size: 16px;
+      !important;
       padding: 0;
-      margin: 0; !important;
+      margin: 0;
+      !important;
     }
-    
+
     hr {
-      background-color: lightgray;!important;
+      background-color: lightgray;
+      !important;
     }
-    
-    </style>
+  </style>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
-  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script
+    type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -125,428 +141,452 @@
           </div>
         </div>
       </div>
-  
+
     </div>
   </nav>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding</h1>
-          <h1 class="title is-4 publication-title">IEEE Robotics and Automation Letters (RAL) 2024</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://bit-dyn.github.io/">Yinan Deng</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href=" ">Jiahui Wang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href=" ">Jingyu Zhao</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href=" ">Jianyu Dou</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href=" ">Yi Yang</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://yfyue-bit.github.io/">Yufeng Yue</a><sup>1</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Beijing Institute of Technology</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2406.08009"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+            <h1 class="title is-1 publication-title">OpenMulti: Open-Vocabulary Instance-Level Multi-Agent Distributed
+              Implicit Mapping</h1>
+            <h1 class="title is-4 publication-title">IEEE Robotics and Automation Letters (RAL) 2025</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href=" ">Jianyu Dou</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://bit-dyn.github.io/">Yinan Deng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href=" ">Xingsi Tang</a><sup>1</sup>,
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2406.08009"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=BeUdxrjItDE"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/BIT-DYN/OpenObj"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
+              <span class="author-block">
+                <a href="https://yfyue-bit.github.io/">Yufeng Yue</a><sup>1</sup>
               </span>
             </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Beijing Institute of Technology</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2406.08009" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.08009" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=BeUdxrjItDE"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/BIT-DYN/OpenObj"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <style>
-        .title.is-3 {
-          text-align: center;
-        }
-      </style>
-      <h2 class="title is-3">Poster</h2>
-      <img id="teaser" src="./static/images/poster.jpg" alt="teaser">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf"> OpenObj facilitates various downstream tasks. </span>
-      </h2>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <style>
+          .title.is-3 {
+            text-align: center;
+          }
+        </style>
+        <h2 class="title is-3">Poster</h2>
+        <img id="teaser" src="./static/images/poster.jpg" alt="teaser">
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf"> OpenObj facilitates various downstream tasks. </span>
+        </h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/BeUdxrjItDE?si=xM9mUG0Zw5sTU4g1"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/BeUdxrjItDE?si=xM9mUG0Zw5sTU4g1" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p style="text-indent: 2em;">
+              Multi-agent distributed collaborative mapping
+              provides comprehensive and efficient representations for robots.
+              However, existing approaches lack instance-level awareness and
+              semantic understanding of environments, limiting their effectiveness
+              for downstream applications. To address this issue, we
+              propose OpenMulti, an open-vocabulary instance-level multiagent
+              distributed implicit mapping framework. Specifically, we
+              introduce a Cross-Agent Instance Alignment module, which
+              constructs an Instance Collaborative Graph to ensure consistent
+              instance understanding across agents. To alleviate the degradation
+              of mapping accuracy due to the information compression
+              problem, we leverage Cross Rendering Supervision to enhance
+              distributed learning of the scene. Experimental results show
+              that OpenMulti outperforms related algorithms in both finegrained
+              geometric accuracy and zero-shot semantic accuracy.
+              In addition, OpenMulti supports instance-level retrieval tasks,
+              delivering semantic annotations for downstream applications.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <style>
+          .title.is-3 {
+            text-align: center;
+          }
+        </style>
+        <h2 class="title is-3">Framework</h2>
         <div class="content has-text-justified">
           <p style="text-indent: 2em;">
-            In recent years, there has been a surge of interest in open-vocabulary 3D scene reconstruction 
-            facilitated by visual language models (VLMs), which showcase remarkable capabilities in open-set 
-            retrieval. However, existing methods face some limitations: they either focus on learning point-wise 
-            features, resulting in blurry semantic understanding, or solely tackle object-level reconstruction, 
-            thereby overlooking the intricate details of the object's interior.
-            To address these challenges, we introduce OpenObj, an innovative approach to build open-vocabulary 
-            object-level Neural Radiance Fields (NeRF) with fine-grained understanding. In essence, OpenObj 
-            establishes a robust framework for efficient and watertight scene modeling and comprehension at 
-            the object-level. Moreover, we incorporate part-level features into the neural fields, enabling a 
-            nuanced representation of object interiors. This approach clearly captures object-level instances 
-            while maintaining a fine-grained understanding.
-            The results on multiple datasets demonstrate that OpenObj achieves superior performance in zero-shot 
-            semantic segmentation and retrieval tasks. Additionally, OpenObj supports real-world robotics tasks 
-            at multiple scales, including global mobility and local manipulation.
+            First, eachagent performs data collection and processing, capturing
+            RGB and depth images, recording poses, and performing instance segmentation and feature extraction.
+            The Cross-Agent Instance Alignment module then constructs an Instance Connectivity Graph to ensure semantic
+            consistency.
+            Finally, the instance-level NeRF network maintained by each
+            agent is optimized using a traditional loss function and
+            the cross-rendering supervision module, which addresses the
+            information compression problem and enhances the accuracy
+            of collaborative multi-agent implicit mapping.
           </p>
         </div>
+        <img id="teaser" src="./static/images/framework.jpg" alt="teaser">
       </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <style>
-        .title.is-3 {
-          text-align: center;
-        }
-      </style>
-      <h2 class="title is-3">Framework</h2>
-      <div class="content has-text-justified">
-        <p style="text-indent: 2em;">
-        First, the Object Segmentation and Understanding module identifies and 
-        comprehends object instances from color images. Then, Mask Clustering module 
-        ensures consistent object association across frames. Next, the Part-level Fine-Grained 
-        Feature Extraction module leverages the dense segmentation capability of 
-        SAM to distinguish parts and extracts their visual features using VLMs. Finally,
-         the NeRF Rendering and Training module vectorizes the training of NeRFs for all 
-         objects based on the masks, input RGBD images, and dense VLM features, enabling it 
-         to learn detailed object properties.
-        </p>
-      </div>
-      <img id="teaser" src="./static/images/framework.jpg" alt="teaser">
-    </div>
-  </div>
-</section>
+  <section class="section">
+    <div class="container is-max-desktop">
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <!-- Animation. -->
       <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Results</h2>
+        <!-- Animation. -->
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Results</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">2D Zero-shot Semantic Segmentation</h3>
-          <!-- <div class="large-8 columns"> -->
-          <div style="display: flex;">
-            <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-              <img src="./static/images/2D_seg/office_3_3dovs.png" alt="3D-OVS"/>
-              <img src="./static/images/2D_seg/office_3_lerf.png" alt="LERF"/>
-              <img src="./static/images/2D_seg/office_3_lseg.png" alt="LSEG"/>
-              <img src="./static/images/2D_seg/office_3_our.png" alt="Ours"/>
-            </div>
-            <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-              <img src="./static/images/2D_seg/room_0_3dovs.png" alt="3D-OVS"/>
-              <img src="./static/images/2D_seg/room_0_lerf.png" alt="LERF"/>
-              <img src="./static/images/2D_seg/room_0_lseg.png" alt="LSEG"/>
-              <img src="./static/images/2D_seg/room_0_our.png" alt="Ours"/>
-            </div>
-            
-          </div>
-          <div style="display: flex;">
-            <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-              <img src="./static/images/2D_seg/office_3_gt.png" alt="gt"/>
-            </div>
-            <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-              <img src="./static/images/2D_seg/room_0_gt.png" alt="gt"/>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h2 class="title is-5 has-text-centered">Office-3</h2>
+            <!-- Interpolating. -->
+            <h3 class="title is-4">2D Zero-shot Semantic Segmentation</h3>
+            <!-- <div class="large-8 columns"> -->
+            <div style="display: flex;">
+              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
+                <img src="./static/images/2D_seg/office_3_3dovs.png" alt="3D-OVS" />
+                <img src="./static/images/2D_seg/office_3_lerf.png" alt="LERF" />
+                <img src="./static/images/2D_seg/office_3_lseg.png" alt="LSEG" />
+                <img src="./static/images/2D_seg/office_3_our.png" alt="Ours" />
               </div>
-            </div>
-      
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h2 class="title is-5 has-text-centered">Room-0</h2>
+              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
+                <img src="./static/images/2D_seg/room_0_3dovs.png" alt="3D-OVS" />
+                <img src="./static/images/2D_seg/room_0_lerf.png" alt="LERF" />
+                <img src="./static/images/2D_seg/room_0_lseg.png" alt="LSEG" />
+                <img src="./static/images/2D_seg/room_0_our.png" alt="Ours" />
               </div>
-            </div>
-          </div>
-          <div style="display: flex;">
-            <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-              <img src="./static/images/2D_seg/room_1_3dovs.png" alt="3D-OVS"/>
-              <img src="./static/images/2D_seg/room_1_lerf.png" alt="LERF"/>
-              <img src="./static/images/2D_seg/room_1_lseg.png" alt="LSEG"/>
-              <img src="./static/images/2D_seg/room_1_our.png" alt="Ours"/>
-            </div>
-            <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-              <img src="./static/images/2D_seg/room_2_3dovs.png" alt="3D-OVS"/>
-              <img src="./static/images/2D_seg/room_2_lerf.png" alt="LERF"/>
-              <img src="./static/images/2D_seg/room_2_lseg.png" alt="LSEG"/>
-              <img src="./static/images/2D_seg/room_2_our.png" alt="Ours"/>
-            </div>
-          </div>
-          <div style="display: flex;">
-            <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-              <img src="./static/images/2D_seg/room_1_gt.png" alt="gt"/>
-            </div>
-            <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-              <img src="./static/images/2D_seg/room_2_gt.png" alt="gt"/>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h2 class="title is-5 has-text-centered">Room-1</h2>
-              </div>
-            </div>
-      
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h2 class="title is-5 has-text-centered">Room-2</h2>
-              </div>
-            </div>
-          </div>
-        <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Multi-granularity Open-vocabulary Retrieval</h3>
-          <img id="teaser" src="./static/images/checkResult.jpg" alt="teaser">
-          <h2 class="subtitle has-text-centered">
-            <span>Multi-granularity Open-vocabulary Retrieval</span>
-          </h2>
-        <!--/ Re-rendering. -->
+            </div>
+            <div style="display: flex;">
+              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
+                <img src="./static/images/2D_seg/office_3_gt.png" alt="gt" />
+              </div>
+              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
+                <img src="./static/images/2D_seg/room_0_gt.png" alt="gt" />
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h2 class="title is-5 has-text-centered">Office-3</h2>
+                </div>
+              </div>
 
-        <h3 class="title is-4">3D Reconstruction</h3>
-        <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
-          Visualisation of Scene
-        <select id="partial_label-selector1_3D" class="partial_label-selector-3D" style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                    <option value="room0" selected="">Room0</option>
-                    <option value="office0">Office0</option>
-                    <option value="office3">Office3</option>
-       </select>
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h2 class="title is-5 has-text-centered">Room-0</h2>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
+                <img src="./static/images/2D_seg/room_1_3dovs.png" alt="3D-OVS" />
+                <img src="./static/images/2D_seg/room_1_lerf.png" alt="LERF" />
+                <img src="./static/images/2D_seg/room_1_lseg.png" alt="LSEG" />
+                <img src="./static/images/2D_seg/room_1_our.png" alt="Ours" />
+              </div>
+              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
+                <img src="./static/images/2D_seg/room_2_3dovs.png" alt="3D-OVS" />
+                <img src="./static/images/2D_seg/room_2_lerf.png" alt="LERF" />
+                <img src="./static/images/2D_seg/room_2_lseg.png" alt="LSEG" />
+                <img src="./static/images/2D_seg/room_2_our.png" alt="Ours" />
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
+                <img src="./static/images/2D_seg/room_1_gt.png" alt="gt" />
+              </div>
+              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
+                <img src="./static/images/2D_seg/room_2_gt.png" alt="gt" />
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h2 class="title is-5 has-text-centered">Room-1</h2>
+                </div>
+              </div>
+
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h2 class="title is-5 has-text-centered">Room-2</h2>
+                </div>
+              </div>
+            </div>
+            <br />
+            <!--/ Interpolating. -->
+
+            <!-- Re-rendering. -->
+            <h3 class="title is-4">Multi-granularity Open-vocabulary Retrieval</h3>
+            <img id="teaser" src="./static/images/checkResult.jpg" alt="teaser">
+            <h2 class="subtitle has-text-centered">
+              <span>Multi-granularity Open-vocabulary Retrieval</span>
+            </h2>
+            <!--/ Re-rendering. -->
+
+            <h3 class="title is-4">3D Reconstruction</h3>
+            <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
+              Visualisation of Scene
+              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
+                style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
+                <option value="room0" selected="">Room0</option>
+                <option value="office0">Office0</option>
+                <option value="office3">Office3</option>
+              </select>
               Reconstructed by our method.
-          </p>
-          <br/>
-          <div class="columns is-centered">
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h4 class="title is-5 has-text-centered">RGB</h4>
+            </p>
+            <br />
+            <div class="columns is-centered">
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">RGB</h4>
+                </div>
               </div>
-            </div>
-      
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h4 class="title is-5 has-text-centered">Semantic</h4>
-              </div>
-            </div>
-          </div>
-          <div class="partial_label_3D office0" style="display: none;">
-            <!--  office0 -->
-            <div class="grid-container">
-            <div class="item1">
-                    <model-viewer style="height: 300px; width: 400px;" alt="instance" src="./static/3dModel/office_0_rgb_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item2">
-                    <model-viewer style="height: 300px; width: 400px;" alt="partfeat" src="./static/3dModel/office_0_semantic_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item3">
-                    <model-viewer style="height: 300px; width: 400px;" alt="rgb" src="./static/3dModel/office_0_instance_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item4">
-                    <model-viewer style="height: 300px; width: 400px;" alt="semantic" src="./static/3dModel/office_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            </div>
-          </div>
 
-          <div class="partial_label_3D office3" style="display: none;">
-            <!--  office3  -->
-            <div class="grid-container">
-            <div class="item1">
-                    <model-viewer style="height: 300px; width: 400px;" alt="instance" src="./static/3dModel/office_3_rgb_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">Semantic</h4>
+                </div>
+              </div>
             </div>
-            <div class="item2">
-                    <model-viewer style="height: 300px; width: 400px;" alt="partfeat" src="./static/3dModel/office_3_semantic_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
+            <div class="partial_label_3D office0" style="display: none;">
+              <!--  office0 -->
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
+                    src="./static/3dModel/office_0_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
+                    src="./static/3dModel/office_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
+                    src="./static/3dModel/office_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
+                    src="./static/3dModel/office_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
             </div>
-            <div class="item3">
-                    <model-viewer style="height: 300px; width: 400px;" alt="rgb" src="./static/3dModel/office_3_instance_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item4">
-                    <model-viewer style="height: 300px; width: 400px;" alt="semantic" src="./static/3dModel/office_3_partfeat_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            </div>
-          </div>
 
-          <div class="partial_label_3D room0">
-            <!--  room0  -->
-            <div class="grid-container">
-            <div class="item1">
-                    <model-viewer style="height: 300px; width: 400px;" alt="instance" src="./static/3dModel/room_0_rgb_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item2">
-                    <model-viewer style="height: 300px; width: 400px;" alt="partfeat" src="./static/3dModel/room_0_semantic_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item3">
-                    <model-viewer style="height: 300px; width: 400px;" alt="rgb" src="./static/3dModel/room_0_instance_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            <div class="item4">
-                    <model-viewer style="height: 300px; width: 400px;" alt="semantic" src="./static/3dModel/room_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5" generate-schema="" ar-status="not-presenting">
-                    </model-viewer>
-            </div>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h4 class="title is-5 has-text-centered">Instance</h4>
+            <div class="partial_label_3D office3" style="display: none;">
+              <!--  office3  -->
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
+                    src="./static/3dModel/office_3_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
+                    src="./static/3dModel/office_3_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
+                    src="./static/3dModel/office_3_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
+                    src="./static/3dModel/office_3_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
               </div>
             </div>
-      
-            <!-- Wheel -->
-            <div class="column">
-              <div class="content" center="">
-                <h4 class="title is-5 has-text-centered">Partfeat</h4>
+
+            <div class="partial_label_3D room0">
+              <!--  room0  -->
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
+                    src="./static/3dModel/room_0_rgb_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
+                    src="./static/3dModel/room_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
+                    src="./static/3dModel/room_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
+                    src="./static/3dModel/room_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">Instance</h4>
+                </div>
+              </div>
+
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">Partfeat</h4>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <!--/ Animation. -->
       </div>
-      </div>
-    <!--/ Animation. -->
+      <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+      <script src="./static/js/select.js"></script>
     </div>
-    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
-    <script src="./static/js/select.js"></script>
-  </div>
-</section>
+  </section>
 
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{deng2024openobj,
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{deng2024openobj,
       title={OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding}, 
       author={Deng, Yinan and Wang, Jiahui and Zhao, Jingyu and Dou, Jianyu and Yang, Yi and Yue, Yufeng},
       journal={arXiv preprint arXiv:2406.08009},
       year={2024}
     }</code></pre>
-  </div>
-</section>
+    </div>
+  </section>
 
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
-            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
-          </p>
-        </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
       </div>
-          </p>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+              This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this
+              template.
+            </p>
+          </div>
         </div>
+        </p>
       </div>
     </div>
-  </div>
-</footer>
+    </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
