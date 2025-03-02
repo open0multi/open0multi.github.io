@@ -317,82 +317,263 @@
         <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">Results</h2>
-
             <!-- Interpolating. -->
-            <h3 class="title is-4">2D Zero-shot Semantic Segmentation</h3>
-            <!-- <div class="large-8 columns"> -->
-            <div style="display: flex;">
-              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-                <img src="./static/images/2D_seg/office_3_3dovs.png" alt="3D-OVS" />
-                <img src="./static/images/2D_seg/office_3_lerf.png" alt="LERF" />
-                <img src="./static/images/2D_seg/office_3_lseg.png" alt="LSEG" />
-                <img src="./static/images/2D_seg/office_3_our.png" alt="Ours" />
-              </div>
-              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-                <img src="./static/images/2D_seg/room_0_3dovs.png" alt="3D-OVS" />
-                <img src="./static/images/2D_seg/room_0_lerf.png" alt="LERF" />
-                <img src="./static/images/2D_seg/room_0_lseg.png" alt="LSEG" />
-                <img src="./static/images/2D_seg/room_0_our.png" alt="Ours" />
-              </div>
+            <h3 class="title is-4">Cross-Agent Instance Alignment</h3>
+            <p class="caption selection" style="grid-column-start: 1; grid-column-end: 4;">
+              The
+              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
+                style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
+                <option value="rgb" selected="">RGB</option>
+                <option value="segment">Segment</option>
+                <option value="crossframe">Cross-Frame Fusion</option>
+                <option value="crossagent">Cross-Agent Alignment</option>
+              </select>
+              results of scare
+              <select id="partial_label-selector1_3D_scene" class="partial_label-selector-3D"
+                style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
+                <option value="room0" selected="">Room0</option>
+                <option value="room1">Room1</option>
+                <option value="office3">Office3</option>
+              </select>
+            </p>
 
-            </div>
-            <div style="display: flex;">
-              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-                <img src="./static/images/2D_seg/office_3_gt.png" alt="gt" />
-              </div>
-              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-                <img src="./static/images/2D_seg/room_0_gt.png" alt="gt" />
-              </div>
-            </div>
             <div class="columns is-centered">
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h2 class="title is-5 has-text-centered">Office-3</h2>
+                  <h2 class="title is-5 has-text-centered">Agent1</h2>
                 </div>
               </div>
 
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h2 class="title is-5 has-text-centered">Room-0</h2>
+                  <h2 class="title is-5 has-text-centered">Agent2</h2>
                 </div>
               </div>
             </div>
-            <div style="display: flex;">
-              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-                <img src="./static/images/2D_seg/room_1_3dovs.png" alt="3D-OVS" />
-                <img src="./static/images/2D_seg/room_1_lerf.png" alt="LERF" />
-                <img src="./static/images/2D_seg/room_1_lseg.png" alt="LSEG" />
-                <img src="./static/images/2D_seg/room_1_our.png" alt="Ours" />
-              </div>
-              <div class="twentytwenty-container twentytwenty-compare-4" style="width:35%">
-                <img src="./static/images/2D_seg/room_2_3dovs.png" alt="3D-OVS" />
-                <img src="./static/images/2D_seg/room_2_lerf.png" alt="LERF" />
-                <img src="./static/images/2D_seg/room_2_lseg.png" alt="LSEG" />
-                <img src="./static/images/2D_seg/room_2_our.png" alt="Ours" />
-              </div>
-            </div>
-            <div style="display: flex;">
-              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-                <img src="./static/images/2D_seg/room_1_gt.png" alt="gt" />
-              </div>
-              <div class="twentytwenty-container twentytwenty-compare-1" style="width:35%">
-                <img src="./static/images/2D_seg/room_2_gt.png" alt="gt" />
+
+            <!-- office3_rgb_gif -->
+            <div class="partial_label_3D office3_rgb_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/office3/office_3_rgb_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/office3/office_3_rgb_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/office3/office_3_rgb_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/office3/office_3_rgb_camera3.gif" alt="" />
+                </div>
               </div>
             </div>
+            <!-- office3_segment_gif -->
+            <div class="partial_label_3D office3_segment_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/office3/office_3_segment_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/office3/office_3_segment_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/office3/office_3_segment_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/office3/office_3_segment_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- office3_crossagent_gif -->
+            <div class="partial_label_3D office3_crossagent_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/office3/office_3_crossagent_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/office3/office_3_crossagent_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/office3/office_3_crossagent_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/office3/office_3_crossagent_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- office3_crossframe_gif -->
+            <div class="partial_label_3D office3_crossframe_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/office3/office_3_crossframe_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/office3/office_3_crossframe_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/office3/office_3_crossframe_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/office3/office_3_crossframe_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- room1_rgb_gif -->
+            <div class="partial_label_3D room1_rgb_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room1/room_1_rgb_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room1/room_1_rgb_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room1/room_1_rgb_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room1/room_1_rgb_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room1_segment_gif -->
+            <div class="partial_label_3D room1_segment_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room1/room_1_segment_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room1/room_1_segment_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room1/room_1_segment_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room1/room_1_segment_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room1_crossagent_gif -->
+            <div class="partial_label_3D room1_crossagent_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room1/room_1_crossagent_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room1/room_1_crossagent_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room1/room_1_crossagent_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room1/room_1_crossagent_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room1_crossframe_gif -->
+            <div class="partial_label_3D room1_crossframe_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room1/room_1_crossframe_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room1/room_1_crossframe_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room1/room_1_crossframe_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room1/room_1_crossframe_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- room0_rgb_gif -->
+            <div class="partial_label_3D room0_rgb_gif">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room0/room_0_rgb_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room0/room_0_rgb_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room0/room_0_rgb_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room0/room_0_rgb_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room0_segment_gif -->
+            <div class="partial_label_3D room0_segment_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room0/room_0_segment_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room0/room_0_segment_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room0/room_0_segment_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room0/room_0_segment_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room0_crossagent_gif -->
+            <div class="partial_label_3D room0_crossagent_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room0/room_0_crossagent_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room0/room_0_crossagent_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room0/room_0_crossagent_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room0/room_0_crossagent_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- room0_crossframe_gif -->
+            <div class="partial_label_3D room0_crossframe_gif" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <img src="./gif/room0/room_0_crossframe_camera0.gif" alt="" />
+                </div>
+                <div class="item2">
+                  <img src="./gif/room0/room_0_crossframe_camera1.gif" alt="" />
+                </div>
+                <div class="item3">
+                  <img src="./gif/room0/room_0_crossframe_camera2.gif" alt="" />
+                </div>
+                <div class="item4">
+                  <img src="./gif/room0/room_0_crossframe_camera3.gif" alt="" />
+                </div>
+              </div>
+            </div>
+
+
+
             <div class="columns is-centered">
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h2 class="title is-5 has-text-centered">Room-1</h2>
+                  <h2 class="title is-5 has-text-centered">Agent3</h2>
                 </div>
               </div>
 
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h2 class="title is-5 has-text-centered">Room-2</h2>
+                  <h2 class="title is-5 has-text-centered">Agent4</h2>
                 </div>
               </div>
             </div>
@@ -400,14 +581,76 @@
             <!--/ Interpolating. -->
 
             <!-- Re-rendering. -->
-            <h3 class="title is-4">Multi-granularity Open-vocabulary Retrieval</h3>
-            <img id="teaser" src="./static/images/checkResult.jpg" alt="teaser">
+            <h3 class="title is-4">Multi-Agent 3D Reconstruction</h3>
+            <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
+              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
+                style="padding: 2px; background:#f4f2f2; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
+                <option value="RGB" selected="">RGB</option>
+                <option value="Semantic">Semantic</option>
+                <option value="Instance">Instance</option>
+              </select>
+              Visualisation of scare
+              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
+                style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
+                <option value="Room0" selected="">Room0</option>
+                <option value="Room1">Room1</option>
+                <option value="office0">Office3</option>
+              </select>
+              representation by our method
+            </p>
+            </p>
+            <br />
+            <div class="columns is-centered">
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">RGB</h4>
+                </div>
+              </div>
+
+              <!-- Wheel -->
+              <div class="column">
+                <div class="content" center="">
+                  <h4 class="title is-5 has-text-centered">Semantic</h4>
+                </div>
+              </div>
+            </div>
+            <div class="partial_label_3D office0" style="display: none;">
+              <!--  office0 -->
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
+                    src="./static/3dModel/office_0_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
+                    src="./static/3dModel/office_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
+                    src="./static/3dModel/office_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
+                    src="./static/3dModel/office_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+            <!-- <img id="teaser" src="./static/images/checkResult.jpg" alt="teaser"> -->
             <h2 class="subtitle has-text-centered">
-              <span>Multi-granularity Open-vocabulary Retrieval</span>
+              <span>Multi-Agent 3D Reconstruction</span>
             </h2>
             <!--/ Re-rendering. -->
 
-            <h3 class="title is-4">3D Reconstruction</h3>
+            <h3 class="title is-4">Instance-level Open-vocabulary Retrieval</h3>
             <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
               Visualisation of Scene
               <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
