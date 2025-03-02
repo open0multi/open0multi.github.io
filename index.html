@@ -560,8 +560,6 @@
               </div>
             </div>
 
-
-
             <div class="columns is-centered">
               <!-- Wheel -->
               <div class="column">
@@ -569,7 +567,6 @@
                   <h2 class="title is-5 has-text-centered">Agent3</h2>
                 </div>
               </div>
-
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
@@ -585,16 +582,16 @@
             <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
               <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
                 style="padding: 2px; background:#f4f2f2; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                <option value="RGB" selected="">RGB</option>
-                <option value="Semantic">Semantic</option>
-                <option value="Instance">Instance</option>
+                <option value="rgb" selected="">RGB</option>
+                <option value="semantic">Semantic</option>
+                <option value="instance">Instance</option>
               </select>
               Visualisation of scare
-              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
+              <select id="partial_label-selector1_3D_scene" class="partial_label-selector-3D"
                 style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                <option value="Room0" selected="">Room0</option>
-                <option value="Room1">Room1</option>
-                <option value="office0">Office3</option>
+                <option value="room0" selected="">Room0</option>
+                <option value="room1">Room1</option>
+                <option value="office3">Office3</option>
               </select>
               representation by our method
             </p>
@@ -604,180 +601,297 @@
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">RGB</h4>
+                  <h4 class="title is-5 has-text-centered">Agent1</h4>
                 </div>
               </div>
 
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">Semantic</h4>
+                  <h4 class="title is-5 has-text-centered">Agent2</h4>
                 </div>
               </div>
             </div>
-            <div class="partial_label_3D office0" style="display: none;">
-              <!--  office0 -->
+            <!-- office3_rgb_glb -->
+            <div class="partial_label_3D office3_rgb_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_rgb_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_rgb_camera1.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_rgb_camera2.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_rgb_camera3.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+            <!-- office3_instance_glb -->
+            <div class="partial_label_3D office3_instance_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_instance_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_instance_camera1.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_instance_camera2.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/office3/office_3_instance_camera3.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
+            <!-- office3_semantic_glb -->
+            <div class="partial_label_3D office3_semantic_glb" style="display: none;">
               <div class="grid-container">
                 <div class="item1">
                   <model-viewer style="height: 300px; width: 400px;" alt="instance"
-                    src="./static/3dModel/office_0_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
+                    src="./static/3D Model/office3/office_3_semantic_camera0.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item2">
                   <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
-                    src="./static/3dModel/office_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                    src="./static/3D Model/office3/office_3_semantic_camera1.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item3">
                   <model-viewer style="height: 300px; width: 400px;" alt="rgb"
-                    src="./static/3dModel/office_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                    src="./static/3D Model/office3/office_3_semantic_camera2.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item4">
                   <model-viewer style="height: 300px; width: 400px;" alt="semantic"
-                    src="./static/3dModel/office_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                    src="./static/3D Model/office3/office_3_semantic_camera3.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
               </div>
             </div>
-            <!-- <img id="teaser" src="./static/images/checkResult.jpg" alt="teaser"> -->
-            <h2 class="subtitle has-text-centered">
-              <span>Multi-Agent 3D Reconstruction</span>
-            </h2>
-            <!--/ Re-rendering. -->
 
-            <h3 class="title is-4">Instance-level Open-vocabulary Retrieval</h3>
-            <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
-              Visualisation of Scene
-              <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
-                style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                <option value="room0" selected="">Room0</option>
-                <option value="office0">Office0</option>
-                <option value="office3">Office3</option>
-              </select>
-              Reconstructed by our method.
-            </p>
-            <br />
-            <div class="columns is-centered">
-              <!-- Wheel -->
-              <div class="column">
-                <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">RGB</h4>
-                </div>
-              </div>
-
-              <!-- Wheel -->
-              <div class="column">
-                <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">Semantic</h4>
-                </div>
-              </div>
-            </div>
-            <div class="partial_label_3D office0" style="display: none;">
-              <!--  office0 -->
+            <!-- room1_rgb_glb -->
+            <div class="partial_label_3D room1_rgb_glb" style="display: none;">
               <div class="grid-container">
                 <div class="item1">
-                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
-                    src="./static/3dModel/office_0_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item2">
-                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
-                    src="./static/3dModel/office_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item3">
-                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
-                    src="./static/3dModel/office_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item4">
-                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
-                    src="./static/3dModel/office_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-              </div>
-            </div>
-
-            <div class="partial_label_3D office3" style="display: none;">
-              <!--  office3  -->
-              <div class="grid-container">
-                <div class="item1">
-                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
-                    src="./static/3dModel/office_3_rgb_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item2">
-                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
-                    src="./static/3dModel/office_3_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item3">
-                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
-                    src="./static/3dModel/office_3_instance_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-                <div class="item4">
-                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
-                    src="./static/3dModel/office_3_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
-                    exposure=".5" generate-schema="" ar-status="not-presenting">
-                  </model-viewer>
-                </div>
-              </div>
-            </div>
-
-            <div class="partial_label_3D room0">
-              <!--  room0  -->
-              <div class="grid-container">
-                <div class="item1">
-                  <model-viewer style="height: 300px; width: 400px;" alt="instance"
-                    src="./static/3dModel/room_0_rgb_colored_scene.glb" camera-controls="" auto-rotate="" exposure=".5"
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_rgb_camera0.glb" camera-controls="" auto-rotate="" exposure=".5"
                     generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item2">
-                  <model-viewer style="height: 300px; width: 400px;" alt="partfeat"
-                    src="./static/3dModel/room_0_semantic_colored_scene.glb" camera-controls="" auto-rotate=""
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_rgb_camera1.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_rgb_camera2.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_rgb_camera3.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
+            <!-- room1_instance_glb -->
+            <div class="partial_label_3D room1_instance_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_instance_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_instance_camera1.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item3">
-                  <model-viewer style="height: 300px; width: 400px;" alt="rgb"
-                    src="./static/3dModel/room_0_instance_colored_scene.glb" camera-controls="" auto-rotate=""
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_instance_camera2.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
                 <div class="item4">
-                  <model-viewer style="height: 300px; width: 400px;" alt="semantic"
-                    src="./static/3dModel/room_0_partfeat_colored_scene.glb" camera-controls="" auto-rotate=""
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_instance_camera3.glb" camera-controls="" auto-rotate=""
                     exposure=".5" generate-schema="" ar-status="not-presenting">
                   </model-viewer>
                 </div>
               </div>
             </div>
+
+            <!-- room1_semantic_glb -->
+            <div class="partial_label_3D room1_semantic_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_semantic_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_semantic_camera1.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_semantic_camera2.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room1/room_1_semantic_camera3.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
+            <!-- room0_rgb_glb -->
+            <div class="partial_label_3D room0_rgb_glb">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_rgb_camera0.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_rgb_camera1.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_rgb_camera2.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_rgb_camera3.glb" camera-controls="" auto-rotate="" exposure=".5"
+                    generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
+            <!-- room0_instance_glb -->
+            <div class="partial_label_3D room0_instance_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_instance_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_instance_camera1.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_instance_camera2.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_instance_camera3.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
+            <!-- room0_semantic_glb -->
+            <div class="partial_label_3D room0_semantic_glb" style="display: none;">
+              <div class="grid-container">
+                <div class="item1">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_semantic_camera0.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item2">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_semantic_camera1.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item3">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_semantic_camera2.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+                <div class="item4">
+                  <model-viewer style="height: 300px; width: 400px;"
+                    src="./static/3D Model/room0/room_0_semantic_camera3.glb" camera-controls="" auto-rotate=""
+                    exposure=".5" generate-schema="" ar-status="not-presenting">
+                  </model-viewer>
+                </div>
+              </div>
+            </div>
+
             <div class="columns is-centered">
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">Instance</h4>
+                  <h4 class="title is-5 has-text-centered">Agent3</h4>
                 </div>
               </div>
-
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
-                  <h4 class="title is-5 has-text-centered">Partfeat</h4>
+                  <h4 class="title is-5 has-text-centered">Agent4</h4>
                 </div>
               </div>
             </div>
