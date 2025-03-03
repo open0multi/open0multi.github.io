@@ -120,7 +120,7 @@
 
 <body>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -143,7 +143,11 @@
       </div>
 
     </div>
-  </nav>
+  </nav> -->
+
+  <div style="text-align: center;">
+    <img src="./static/images/logo.png" alt="" style="width: 20%;">
+  </div>
 
   <section class="hero">
     <div class="hero-body">
@@ -152,8 +156,10 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">OpenMulti: Open-Vocabulary Instance-Level Multi-Agent Distributed
               Implicit Mapping</h1>
-            <h1 class="title is-4 publication-title">IEEE Robotics and Automation Letters (RAL) 2025</h1>
-            <div class="is-size-5 publication-authors">
+
+            <h1 class="title is-4 publication-title">Anonymous RAL submission</h1>
+            <!-- <h1 class="title is-4 publication-title">IEEE Robotics and Automation Letters (RAL) 2025</h1> -->
+            <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href=" ">Jianyu Dou</a><sup>1</sup>,</span>
               <span class="author-block">
@@ -164,11 +170,11 @@
               <span class="author-block">
                 <a href="https://yfyue-bit.github.io/">Yufeng Yue</a><sup>1</sup>
               </span>
-            </div>
+            </div> -->
 
-            <div class="is-size-5 publication-authors">
+            <!-- <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>Beijing Institute of Technology</span>
-            </div>
+            </div> -->
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -190,7 +196,7 @@
                   </a>
                 </span>
                 <!-- Video Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://www.youtube.com/watch?v=BeUdxrjItDE"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -198,9 +204,9 @@
                     </span>
                     <span>Video</span>
                   </a>
-                </span>
+                </span> -->
                 <!-- Code Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://github.com/BIT-DYN/OpenObj"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -208,7 +214,7 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
               </div>
 
             </div>
@@ -227,15 +233,20 @@
           }
         </style>
         <h2 class="title is-3">Poster</h2>
-        <img id="teaser" src="./static/images/poster.jpg" alt="teaser">
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf"> OpenObj facilitates various downstream tasks. </span>
-        </h2>
+        <img id="teaser" src="./static/images/poster.png" alt="teaser">
+        <div class="content has-text-justified">
+          <p style="text-indent: 2em;">
+            OpenMulti facilitates information exchange between agents, effectively compensating for regions not observed
+            by
+            individual agents. Additionally, OpenMulti supports downstream tasks including open-vocabulary instance
+            retrieval.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -247,7 +258,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -293,18 +304,20 @@
         <h2 class="title is-3">Framework</h2>
         <div class="content has-text-justified">
           <p style="text-indent: 2em;">
-            First, eachagent performs data collection and processing, capturing
-            RGB and depth images, recording poses, and performing instance segmentation and feature extraction.
-            The Cross-Agent Instance Alignment module then constructs an Instance Connectivity Graph to ensure semantic
-            consistency.
-            Finally, the instance-level NeRF network maintained by each
-            agent is optimized using a traditional loss function and
-            the cross-rendering supervision module, which addresses the
-            information compression problem and enhances the accuracy
-            of collaborative multi-agent implicit mapping.
+            First, each agent performs data collection and processing, capturing RGB and depth images, recording poses,
+            and
+            performing instance segmentation along with feature extraction. The Cross-Agent Instance Alignment module
+            then
+            constructs an Instance Connectivity Graph to ensure semantic consistency. Finally, the instance-level NeRF
+            network
+            maintained by each agent is optimized using a traditional loss function and the cross-rendering supervision
+            module,
+            which addresses the information compression problem and enhances the accuracy of collaborative multi-agent
+            implicit
+            mapping.
           </p>
         </div>
-        <img id="teaser" src="./static/images/framework.jpg" alt="teaser">
+        <img id="teaser" src="./static/images/framework.png" alt="teaser">
       </div>
     </div>
   </section>
@@ -323,12 +336,12 @@
               The
               <select id="partial_label-selector1_3D" class="partial_label-selector-3D"
                 style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                <option value="rgb" selected="">RGB</option>
-                <option value="segment">Segment</option>
-                <option value="crossframe">Cross-Frame Fusion</option>
-                <option value="crossagent">Cross-Agent Alignment</option>
+                <option value="rgb" selected="" style="text-align: center;">RGB</option>
+                <option value="segment" style="text-align: center;;">Segment</option>
+                <option value="crossframe" style="text-align: center;">Cross-Frame Fusion</option>
+                <option value="crossagent" style="text-align: center;">Cross-Agent Alignment</option>
               </select>
-              results of scare
+              results of scene
               <select id="partial_label-selector1_3D_scene" class="partial_label-selector-3D"
                 style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
                 <option value="room0" selected="">Room0</option>
@@ -337,7 +350,7 @@
               </select>
             </p>
 
-            <div class="columns is-centered">
+            <div class="columns is-centered" style="margin-top: 40px;">
               <!-- Wheel -->
               <div class="column">
                 <div class="content" center="">
@@ -582,20 +595,20 @@
             <p class="caption selection" style="grid-column-start: 1; grid-column-end: 3;">
               <select id="partial_label-selector1_3D_1" class="partial_label-selector-3D-reconstruction"
                 style="padding: 2px; background:#f4f2f2; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
-                <option value="rgb" selected="">RGB</option>
-                <option value="semantic">Semantic</option>
-                <option value="instance">Instance</option>
+                <option value="rgb" selected="" style="text-align: center;">RGB</option>
+                <option value="semantic" style="text-align: center;">Semantic</option>
+                <option value="instance" style="text-align: center;">Instance</option>
               </select>
-              Visualisation of scare
+              visualisation of scene
               <select id="partial_label-selector1_3D_scene_1" class="partial_label-selector-3D-reconstruction"
                 style="padding: 2px; background:#f0f0f0; border:none; font-family: 'Noto Sans', sans-serif; font-size:16px;">
                 <option value="room0" selected="">Room0</option>
                 <option value="room1">Room1</option>
                 <option value="office3">Office3</option>
               </select>
-              representation by our method
+              representation by our method.
             </p>
-            </p>
+            <!-- </p> -->
             <br />
             <div class="columns is-centered">
               <!-- Wheel -->
@@ -899,15 +912,27 @@
         </div>
         <!--/ Animation. -->
       </div>
+
       <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
       <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
       <script src="./static/js/select.js"></script>
+
+      <h4 class="title is-4" style="margin-top: 60px;">Instance-Level Open-Vocabulary Retrieval</h4>
+      <p>
+        <img src="./static/images/fig8.png" alt="">
+      </p>
+      <p style="text-align: center;">
+        OpenMulti supports direct retrieval and associative retrieval tasks.
+      </p>
     </div>
+
+
+
   </section>
 
 
 
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{deng2024openobj,
@@ -917,7 +942,7 @@
       year={2024}
     }</code></pre>
     </div>
-  </section>
+  </section> -->
 
 
   <footer class="footer">
