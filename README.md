@@ -1,6 +1,6 @@
 This is a website about OpenMulti
 
-link: https://open0multi.github.io/
+link: https://openmulti123.github.io/
 
 git pull
 
